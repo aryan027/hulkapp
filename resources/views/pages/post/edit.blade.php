@@ -37,7 +37,7 @@
                                 <label for="tag" class="form-label">Select Tags for the post. <span class="text-danger">*</span></label>
                                 <select name="tags[]" multiple id="tag" class="multiselect-dropdown form-control @error('tags') is-invalid @enderror" required>
                                     @forelse($tags as $tag)
-                                        <option value="{{ $tag->id }}" {{ $post-> }}>{{ $tag->tag_name }}</option>
+                                        <option value="{{ $tag->id }}" {{ $post->tag==$tag->tag_name }}>{{ $tag->tag_name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -70,7 +70,8 @@
 
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">Create</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary btn-sm">update</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                             <a href="" class="btn btn-secondary btn-sm">Cancel</a>
                         </div>
                     </form>
